@@ -1,0 +1,47 @@
+$.ajax(
+{
+url: 'https://api.telegram.org/bot251753439:AAHcySu-8c062FLT7cq2ovx7JdUrpb4418E/sendMessage', 
+data : {chat_id:"-1001099774757", text: "test desde la api"},
+type: 'json',
+method: 'post',
+dataType: 'application/x-www-form-urlencoded; UTF-8', 
+
+success: function(data) 
+{
+    $('#log').append('<li>getMe: ' + JSON.stringify(data) + '</li>');
+},
+
+error: function(data)
+{
+    $('#log').append('<li>getMe: ' + JSON.stringify(data) + '</li>');
+}
+}
+);
+
+
+
+Al agregar incidente: 
+
+
+Tipo de incidente: 
+
+	Internet
+
+	Hardware (PC/impresoras/otros)
+		Pc
+		impresora
+		Otro	
+	Sistema
+		GeDoc
+		Carta Medica
+		Mesa de Entrada
+		Cronos
+		Otro
+	Otro
+
+
+SELECT  a.CategoriaID, case a.Parent when 0 then a.Nombre else concat((select Nombre from tbl_categorias where CategoriaID = a.Parent),'-->',a.Nombre) end as Nombre    FROM tbl_categorias a
+  LEFT OUTER JOIN (SELECT  c.Parent, COUNT(*) AS Count FROM tbl_categorias c GROUP BY c.Parent) Deriv1 ON a.CategoriaID = Deriv1.Parent
+
+
+	
